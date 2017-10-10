@@ -1,3 +1,4 @@
+from django.contrib.postgres.search import SearchVectorField
 from django.db import models
 
 
@@ -27,6 +28,7 @@ class Entry(models.Model):
     n_comments = models.IntegerField(default=0)
     n_pingbacks = models.IntegerField(default=0)
     rating = models.IntegerField(default=5)
+    search_vector = SearchVectorField(null=True)
 
     def __str__(self):
         return self.headline
