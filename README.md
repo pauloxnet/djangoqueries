@@ -24,3 +24,10 @@ $ source ~/envs/django_queries
 ```Shell
 $ pip install -r requirements.txt
 ```
+
+## Data population
+
+```Shell
+$ python manage.py populate
+```
+
