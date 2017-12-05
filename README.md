@@ -1,7 +1,7 @@
 # Django Queries
 
 Source code from the Weblog application defined in the Django Documentation Topic
-[Making Queries](https://docs.djangoproject.com/en/1.11/topics/db/queries/).
+[Making Queries](https://docs.djangoproject.com/en/2.0/topics/db/queries/).
 
 ## Creating Database
 
