@@ -16,7 +16,7 @@ WITH ENCODING='UTF8'
 
 ```Shell
 $ python3.6 -m venv ~/envs/django_queries
-$ source ~/envs/django_queries
+$ source ~/envs/django_queries/bin/activate
 ```
 
 ## Installing Python Requirements
