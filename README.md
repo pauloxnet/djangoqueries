@@ -1,22 +1,27 @@
 # Django Queries
 
-Source code from the Weblog application defined in the Django Documentation Topic
-[Making Queries](https://docs.djangoproject.com/en/2.0/topics/db/queries/).
+Source code used in my article ["Full-Text Search in Django with PostgreSQL"](http://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql) based on the Weblog application defined in the Django Documentation Topic
+["Making Queries"](https://docs.djangoproject.com/en/2.0/topics/db/queries/).
 
 ## Creating Database
 
+In `SQL`
+
 ```SQL
-CREATE DATABASE django_queries
-WITH ENCODING='UTF8'
-   OWNER=postgres
-   CONNECTION LIMIT=-1;
+CREATE DATABASE django_queries WITH ENCODING='UTF8' OWNER=postgres CONNECTION LIMIT=-1;
+```
+
+or in your `Shell`
+
+```Shell
+$ createdb -U postgres -O postgres django_queries
 ```
 
 ## Creating and Activating Virtual Environments
 
 ```Shell
-$ python3.6 -m venv ~/envs/django_queries
-$ source ~/envs/django_queries/bin/activate
+$ python3 -m venv ~/venvs/django_queries
+$ source ~/venvs/django_queries/bin/activate
 ```
 
 ## Installing Python Requirements

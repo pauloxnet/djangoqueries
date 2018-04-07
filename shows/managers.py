@@ -6,7 +6,9 @@ from django.db import models
 
 search_vectors = (
     SearchVector('nickname', weight='A', config='english') +
-    SearchVector(StringAgg('genres__name', delimiter=' '), weight='B', config='english') +
+    SearchVector(
+        StringAgg('genres__name', delimiter=' '),
+        weight='B', config='english') +
     SearchVector('description', weight='D', config='english')
 )
 
