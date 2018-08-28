@@ -1,5 +1,7 @@
 # Django Queries
 
+[![Build Status](https://travis-ci.org/pauloxnet/django_queries.svg?branch=master)](https://travis-ci.org/pauloxnet/django_queries) 
+
 Source code used in my article ["Full-Text Search in Django with PostgreSQL"](http://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql) based on the Weblog application defined in the Django Documentation Topic
 ["Making Queries"](https://docs.djangoproject.com/en/2.0/topics/db/queries/).
 
