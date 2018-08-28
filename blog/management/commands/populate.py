@@ -1,5 +1,6 @@
-from blog.models import Author, Blog, Entry
 from django.core.management.base import BaseCommand
+
+from blog.models import Author, Blog, Entry
 
 AUTHOR_LIST = [
     'Terry Gilliam', 'Terry Jones', 'Jerry Lewis',
