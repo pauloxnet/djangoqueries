@@ -15,7 +15,7 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - psql -c "CREATE DATABASE django_queries;" -U postgres
+  - createdb -U postgres django_queries
   - python manage.py migrate --noinput
 
 script:
