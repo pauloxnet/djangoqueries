@@ -7,9 +7,14 @@ services: postgresql
 
 addons:
   postgresql: "12"
+  apt:
+    packages:
+    - postgresql-12
+    - postgresql-client-12
 
 env:
   - DJANGO=3.0
+  - PGPORT=5433
 
 install:
   - pip install -r requirements/common.txt
