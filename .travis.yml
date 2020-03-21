@@ -1,21 +1,21 @@
 language: python
 
 python:
-  - "3.6"
+  - "3.7"
 
 services: postgresql
 
 addons:
-  postgresql: "9.6"
+  postgresql: "12"
 
 env:
-  - DJANGO=2.1
+  - DJANGO=3.0
 
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements/common.txt
 
 before_script:
-  - createdb -U postgres django_queries
+  - createdb -U postgres djangoqueries
   - python manage.py migrate --noinput
 
 script:

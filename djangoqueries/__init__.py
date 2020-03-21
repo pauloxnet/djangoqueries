@@ -1,0 +1,1 @@
+"""Django Queries project."""

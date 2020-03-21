@@ -6,10 +6,6 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('shows', '0001_initial'),
-    ]
+    dependencies = [("shows", "0001_initial")]
 
-    operations = [
-        TrigramExtension()
-    ]
+    operations = [TrigramExtension()]
