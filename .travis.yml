@@ -1,3 +1,5 @@
+os: linux
+dist: xenial
 language: python
 
 python:
@@ -11,12 +13,10 @@ addons:
     packages:
       - postgresql-12
       - postgresql-client-12
-      - postgresql-server-dev-12
 
 env:
-  global:
-    - PGPORT=5433
-  - DJANGO=3.0
+  PGPORT: "5433"
+  DJANGO: "3.0"
 
 install:
   - pip install -r requirements/common.txt
