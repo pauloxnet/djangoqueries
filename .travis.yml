@@ -18,6 +18,7 @@ env:
   jobs:
   - DJANGO=3.0
   global:
+  - PGPASSWORD=travis
   - PGPORT=5433
   - PGUSER=travis
 
