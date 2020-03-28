@@ -56,8 +56,8 @@ class BandTest(TestCase):
         band_queryset = Band.objects.search("jazz").values_list("nickname", "rank")
         band_objects = list(OrderedDict(band_queryset).items())
         band_list = [
-            ("Django Reinhardt", 0.265124),
-            ("Ella Fitzgerald", 0.0759909),
-            ("Louis Armstrong", 0.0759909),
+            ("Django Reinhardt", 0.26512378),
+            ("Ella Fitzgerald", 0.075990885),
+            ("Louis Armstrong", 0.075990885),
         ]
         self.assertSequenceEqual(band_objects, band_list)

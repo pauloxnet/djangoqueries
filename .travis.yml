@@ -8,13 +8,21 @@ python:
 services: postgresql
 
 addons:
-  postgresql: "10"
+  postgresql: "12"
+  apt:
+    packages:
+    - postgresql-12
+    - postgresql-client-12
 
 env:
-  DJANGO: "3.0"
+  jobs:
+  - DJANGO=3.0
+  global:
+  - PGPORT=5433
+
 
 install:
-  - pip install -r requirements/common.txt
+  - pip install -r requirements.txt
 
 before_script:
   - createdb -U postgres djangoqueries
