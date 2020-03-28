@@ -18,7 +18,8 @@ env:
   jobs:
   - DJANGO=3.0
   global:
-  - PGPORT=5433
+  - PGPORT=5432
+  - PGUSER=postgres
 
 
 install:
