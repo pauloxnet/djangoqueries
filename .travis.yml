@@ -19,14 +19,13 @@ env:
   - DJANGO=3.0
   global:
   - PGPORT=5433
-  - PGUSER=postgres
-
+  - PGUSER=travis
 
 install:
   - pip install -r requirements.txt
 
 before_script:
-  - createdb -U postgres djangoqueries
+  - createdb -U travis djangoqueries
   - python manage.py migrate --noinput
 
 script:
