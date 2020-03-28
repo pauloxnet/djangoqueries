@@ -26,7 +26,8 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - createdb -U travis djangoqueries
+  - psql -c "CREATE DATABASE djangoqueries;" -U travis
+  - psql -c "ALTER USER travis WITH PASSWORD 'travis';" -U travis
   - python manage.py migrate --noinput
 
 script:
