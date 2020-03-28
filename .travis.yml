@@ -18,7 +18,7 @@ env:
   jobs:
   - DJANGO=3.0
   global:
-  - PGPORT=5432
+  - PGPORT=5433
   - PGUSER=postgres
 
 
