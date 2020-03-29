@@ -1,7 +1,9 @@
 # Django Queries <!-- omit in toc -->
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
-[![Build Status](https://travis-ci.org/pauloxnet/djangoqueries.svg?branch=master)](https://travis-ci.org/pauloxnet/djangoqueries) 
+[![Build Status](https://travis-ci.org/pauloxnet/djangoqueries.svg?branch=master)](https://travis-ci.org/pauloxnet/djangoqueries)
+[![Coverage Status](https://coveralls.io/repos/github/pauloxnet/djangoqueries/badge.svg?branch=master)](https://coveralls.io/github/pauloxnet/djangoqueries?branch=master)
+
 
 Source code used in my article ["Full-Text Search in Django with PostgreSQL"](https://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql) based on the blog application defined in the Django documentation topic ["Making queries"](https://docs.djangoproject.com/en/stable/topics/db/queries/).
 

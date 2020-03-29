@@ -1,5 +1,6 @@
-from blog.models import Author, Blog, Entry
 from django.core.management.base import BaseCommand
+
+from blog.models import Author, Blog, Entry
 
 AUTHOR_LIST = [
     "Terry Gilliam",
@@ -9,6 +10,11 @@ AUTHOR_LIST = [
     "Helena Bonham Carter",
     "Hélène Joy",
 ]
+BLOG_KWARGS = {
+    "lang": "french",
+    "name": "Recettes",
+    "tagline": "Des recettes dans toutes les langues!",
+}
 ENTRY_LIST = [
     {
         "headline": "Cheese on Toast recipes",
@@ -42,11 +48,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         Blog.objects.all().delete()
-        blog = Blog.objects.create(
-            name="Recettes",
-            lang="french",
-            tagline="Des recettes dans toutes les langues!",
-        )
+        blog = Blog.objects.create(**BLOG_KWARGS)
         Author.objects.all().delete()
         Author.objects.bulk_create((Author(name=author) for author in AUTHOR_LIST))
         Entry.objects.all().delete()

@@ -15,36 +15,30 @@ class BandTest(TestCase):
         ella_fitzgerald, _ = Band.objects.get_or_create(
             nickname="Ella Fitzgerald",
             description=(
-                "Ella Jane Fitzgerald (25 Apr 1917-15 Jun 1996)"
-                " was an American jazz singer often referred to"
-                " as the First Lady of Song, Queen of Jazz and "
-                "Lady Ella. She was noted for her purity of "
-                "tone, impeccable diction, phrasing and "
-                "intonation, and a horn-like improvisational "
-                "ability, particularly in her scat singing."
+                "Ella Jane Fitzgerald (25 Apr 1917-15 Jun 1996) was an American jazz "
+                "singer often referred to as the First Lady of Song, Queen of Jazz and "
+                "Lady Ella. She was noted for her purity of tone, impeccable diction, "
+                "phrasing and intonation, and a horn-like improvisational ability, "
+                "particularly in her scat singing."
             ),
         )
         django_reinhardt, _ = Band.objects.get_or_create(
             nickname="Django Reinhardt",
             description=(
-                "Jean Django Reinhardt (23 Jan 1910-16 May 1953)"
-                " was a Belgian-born, Romani French jazz "
-                "guitarist and composer, regarded as one of the "
-                "greatest musicians of the twentieth century. He"
-                " was the first jazz talent to emerge from "
-                "Europe and remains the most significant."
+                "Jean Django Reinhardt (23 Jan 1910-16 May 1953) was a Belgian-born, "
+                "Romani French jazz guitarist and composer, regarded as one of the "
+                "greatest musicians of the twentieth century. He was the first jazz "
+                "talent to emerge from Europe and remains the most significant."
             ),
         )
         louis_armstrong, _ = Band.objects.get_or_create(
             nickname="Louis Armstrong",
             description=(
-                "Louis Armstrong (4 Aug 1901-6 Jul 1971), "
-                "nicknamed Satchmo, Satch and Pops, was an "
-                "American trumpeter, composer, singer and "
-                "occasional actor who was one of the most "
-                "influential figures in jazz. His career spanned"
-                " five decades, from the 1920s to the 1960s, "
-                "and different eras in the history of jazz."
+                "Louis Armstrong (4 Aug 1901-6 Jul 1971), nicknamed Satchmo, Satch and "
+                "Pops, was an American trumpeter, composer, singer and occasional "
+                "actor who was one of the most influential figures in jazz. His career "
+                "spanned five decades, from the 1920s to the 1960s, and different eras "
+                "in the history of jazz."
             ),
         )
         # Bands and Genres
