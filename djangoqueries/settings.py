@@ -125,3 +125,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/stable/howto/static-files/
 
 STATIC_URL = "/static/"
+
+
+# Django Debug Toolbar
+# https://django-debug-toolbar.readthedocs.io/en/stable/configuration.html
+
+try:
+    import debug_toolbar  # noqa
+except ModuleNotFoundError:  # pragma: no cover
+    pass
+else:  # pragma: no cover
+    INTERNAL_IPS = ALLOWED_HOSTS
+    INSTALLED_APPS.append("debug_toolbar")
+    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
