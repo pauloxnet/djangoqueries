@@ -23,7 +23,7 @@ flake8-docstrings==1.5.0  # via -r requirements/tests.ini
 flake8-isort==3.0.0       # via -r requirements/tests.ini
 flake8-mypy==17.8.0       # via -r requirements/tests.ini
 flake8==3.7.9             # via -r requirements/tests.ini, flake8-bugbear, flake8-docstrings, flake8-isort, flake8-mypy
-identify==1.4.14          # via pre-commit
+identify==1.4.15          # via pre-commit
 ipdb==0.13.2              # via -r requirements/dev.ini
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.13.0           # via ipdb
@@ -41,7 +41,7 @@ pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
 pip-tools==5.0.0          # via -r requirements/tests.ini
 pluggy==0.13.1            # via pytest, tox
-pre-commit==2.2.0         # via -r requirements/tests.ini
+pre-commit==2.3.0         # via -r requirements/tests.ini
 prompt-toolkit==3.0.5     # via ipython
 psycopg2==2.8.5           # via -r requirements/common.ini
 ptyprocess==0.6.0         # via pexpect
@@ -60,7 +60,7 @@ rope==0.16.0              # via -r requirements/dev.ini
 six==1.14.0               # via packaging, pip-tools, tox, traitlets, virtualenv
 snowballstemmer==2.0.0    # via pydocstyle
 sqlparse==0.3.1           # via django, django-debug-toolbar
-testfixtures==6.14.0      # via flake8-isort
+testfixtures==6.14.1      # via flake8-isort
 toml==0.10.0              # via black, isort, pre-commit, tox
 tox==3.14.6               # via -r requirements/tests.ini
 traitlets==4.3.3          # via ipython
