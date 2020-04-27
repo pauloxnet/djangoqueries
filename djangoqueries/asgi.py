@@ -11,7 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-# fmt: off
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoqueries.settings")  # noqa
-# fmt: on
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoqueries.settings")
+
 application = get_asgi_application()
