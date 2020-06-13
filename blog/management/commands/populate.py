@@ -50,6 +50,6 @@ class Command(BaseCommand):
         Blog.objects.all().delete()
         blog = Blog.objects.create(**BLOG_KWARGS)
         Author.objects.all().delete()
-        Author.objects.bulk_create((Author(name=author) for author in AUTHOR_LIST))
+        Author.objects.bulk_create(Author(name=author) for author in AUTHOR_LIST)
         Entry.objects.all().delete()
-        Entry.objects.bulk_create((Entry(blog=blog, **entry) for entry in ENTRY_LIST))
+        Entry.objects.bulk_create(Entry(blog=blog, **entry) for entry in ENTRY_LIST)
