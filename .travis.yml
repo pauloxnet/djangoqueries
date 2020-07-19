@@ -18,16 +18,16 @@ env:
   jobs:
   - DJANGO=3.0
   global:
-  - PGPASSWORD=travis
+  - PGPASSWORD=djangoqueries
   - PGPORT=5433
-  - PGUSER=travis
+  - PGUSER=djangoqueries
 
 install:
   - pip install -r requirements.txt
 
 before_script:
-  - psql -c "CREATE DATABASE djangoqueries;" -U travis
-  - psql -c "ALTER USER travis WITH PASSWORD 'travis';" -U travis
+  - psql -c "CREATE USER djangoqueries WITH CREATEDB SUPERUSER PASSWORD 'djangoqueries';" -U travis
+  - psql -c "CREATE DATABASE djangoqueries OWNER djangoqueries;" -U travis
   - python manage.py migrate --noinput
 
 script:
