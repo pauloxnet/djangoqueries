@@ -5,7 +5,7 @@
 #    pip-compile --output-file=requirements/common.txt requirements/common.ini
 #
 asgiref==3.2.10           # via django
-django==3.0.8             # via -r requirements/common.ini
-psycopg2==2.8.5           # via -r requirements/common.ini
+django==3.1.1             # via -r requirements/common.ini
+psycopg2==2.8.6           # via -r requirements/common.ini
 pytz==2020.1              # via django
 sqlparse==0.3.1           # via django
