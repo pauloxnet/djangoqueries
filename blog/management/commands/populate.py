@@ -1,3 +1,5 @@
+"""A command to populate show instances."""
+
 from django.core.management.base import BaseCommand
 
 from blog.models import Author, Blog, Entry
@@ -44,9 +46,12 @@ ENTRY_LIST = [
 
 
 class Command(BaseCommand):
-    help = "Populate database with some data"
+    """A command to populate database with shows related data."""
+
+    help = "Populate database with shows related data."
 
     def handle(self, *args, **options):
+        """Clear old instances and create new ones."""
         Blog.objects.all().delete()
         blog = Blog.objects.create(**BLOG_KWARGS)
         Author.objects.all().delete()
