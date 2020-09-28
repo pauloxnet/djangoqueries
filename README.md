@@ -69,5 +69,5 @@ $ python manage.py populate
 ### 👤 Paolo Melchiorre
 
 * 🐙 Github: [@pauloxnet](https://github.com/pauloxnet)
-* ☕️ Website: [www.paulox.net](https://www.paulox.net)
-* 🐦️ Twitter: [@pauloxnet](https://github.com/pauloxnet)
+* 🌍 Personal blog: [www.paulox.net](https://www.paulox.net)
+* 🐦️ Twitter: [@pauloxnet](https://twitter.com/pauloxnet)
