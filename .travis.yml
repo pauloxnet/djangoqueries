@@ -1,33 +1,30 @@
 os: linux
-dist: xenial
+dist: focal
 language: python
 
 python:
   - "3.8"
 
-services: postgresql
+services:
+  - postgresql
 
 addons:
   postgresql: "12"
-  apt:
-    packages:
-    - postgresql-12
-    - postgresql-client-12
 
 env:
   jobs:
-  - DJANGO=3.0
+  - DJANGO=3.1
   global:
-  - PGPASSWORD=djangoqueries
-  - PGPORT=5433
-  - PGUSER=djangoqueries
+  - PGHOST=
+  - PGPASSWORD=
+  - PGPORT=
+  - PGUSER=
 
 install:
   - pip install -r requirements.txt
 
 before_script:
-  - psql -c "CREATE USER djangoqueries WITH CREATEDB SUPERUSER PASSWORD 'djangoqueries';" -U travis
-  - psql -c "CREATE DATABASE djangoqueries OWNER djangoqueries;" -U travis
+  - createdb -U postgres djangoqueries
   - python manage.py migrate --noinput
 
 script:

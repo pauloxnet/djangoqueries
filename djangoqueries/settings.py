@@ -80,11 +80,11 @@ WSGI_APPLICATION = "djangoqueries.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "HOST": "127.0.0.1",
+        "HOST": os.environ.get("PGHOST", "127.0.0.1"),
         "NAME": "djangoqueries",
-        "PASSWORD": os.environ.setdefault("PGPASSWORD", "postgres"),
-        "PORT": os.environ.setdefault("PGPORT", "5432"),
-        "USER": os.environ.setdefault("PGUSER", "postgres"),
+        "PASSWORD": os.environ.get("PGPASSWORD", "postgres"),
+        "PORT": os.environ.get("PGPORT", "5432"),
+        "USER": os.environ.get("PGUSER", "postgres"),
     }
 }
 
