@@ -54,7 +54,7 @@ pytest-django==3.10.0     # via -r requirements/dev.ini
 pytest==6.1.0             # via pytest-django
 pytz==2020.1              # via django
 pyupgrade==2.7.2          # via -r requirements/dev.ini
-pyyaml==5.3.1             # via pre-commit
+pyyaml==5.4             # via pre-commit
 regex==2020.9.27          # via black
 rope==0.17.0              # via -r requirements/dev.ini
 six==1.15.0               # via packaging, pip-tools, tox, virtualenv

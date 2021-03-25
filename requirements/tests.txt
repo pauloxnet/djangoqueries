@@ -37,7 +37,7 @@ pydocstyle==5.1.1         # via flake8-docstrings
 pyflakes==2.2.0           # via flake8
 pyparsing==2.4.7          # via packaging
 pytz==2020.1              # via django
-pyyaml==5.3.1             # via pre-commit
+pyyaml==5.4             # via pre-commit
 regex==2020.9.27          # via black
 six==1.15.0               # via packaging, pip-tools, tox, virtualenv
 snowballstemmer==2.0.0    # via pydocstyle
