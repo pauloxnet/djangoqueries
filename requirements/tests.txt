@@ -31,7 +31,7 @@ pip-tools==5.3.1          # via -r requirements/tests.ini
 pluggy==0.13.1            # via tox
 pre-commit==2.7.1         # via -r requirements/tests.ini
 psycopg2==2.8.6           # via -r requirements/common.ini
-py==1.9.0                 # via tox
+py==1.10.0                 # via tox
 pycodestyle==2.6.0        # via flake8
 pydocstyle==5.1.1         # via flake8-docstrings
 pyflakes==2.2.0           # via flake8
