@@ -26,7 +26,7 @@ identify==1.5.5           # via pre-commit
 iniconfig==1.0.1          # via pytest
 ipdb==0.13.3              # via -r requirements/dev.ini
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.18.1           # via ipdb
+ipython==7.31.1           # via ipdb
 isort==5.5.3              # via -r requirements/tests.ini, flake8-isort
 jedi==0.17.2              # via -r requirements/dev.ini, ipython
 mccabe==0.6.1             # via flake8
