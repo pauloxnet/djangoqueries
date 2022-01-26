@@ -1,35 +1,83 @@
-# Develop
+.DEFAULT_GOAL := help
 
-check:
-	black --check .
-	isort --check-only .
-	flake8
-	mypy .
+.PHONY: check
+check:  ## Check code formatting and import sorting
+	python3 -m black --check .
+	python3 -m isort --check .
+	python3 -m flake8
+	python3 -m mypy .
 
-collectstatic:
-	python manage.py collectstatic --clear --noinput
+.PHONY: collectstatic
+collectstatic:  ## Django collectstatic
+	python3 manage.py collectstatic --clear --link --noinput
 
-dev:
-	pip install -q -U pip~=20.2.0 pip-tools~=5.3.0
-	pip-sync requirements/dev.txt
+.PHONY: coverage
+coverage:  ## Run coverage
+	python3 -m coverage run manage.py test --noinput --parallel
 
-fix:
-	black .
-	isort .
-	flake8
-	mypy .
+.PHONY: fix
+fix:  ## Fix code formatting, linting and sorting imports
+	python3 -m black .
+	python3 -m isort .
+	python3 -m flake8
+	python3 -m mypy .
 
-migrate:
-	python manage.py migrate --noinput
+.PHONY: flush
+flush:  ## Django flush
+	python3 manage.py flush --noinput
 
-migrations:
-	python manage.py makemigrations --no-header
+.PHONY: local
+local: pip_update  ## Install local requirements and dependencies
+	python3 -m piptools sync requirements/local.txt
 
-pip:
-	pip install -q -U pip~=20.2.0 pip-tools~=5.3.0
-	pip-compile $(p) -q -U -o requirements/common.txt requirements/common.ini
-	pip-compile $(p) -q -U -o requirements/dev.txt requirements/dev.ini
-	pip-compile $(p) -q -U -o requirements/tests.txt requirements/tests.ini
+.PHONY: migrate
+migrate:  ## Django migrate
+	python3 manage.py migrate --noinput
 
-test:
+.PHONY: migrations
+migrations: ## Django makemigrations
+	python3 manage.py makemigrations --no-header
+
+.PHONY: outdated
+outdated:  ## Check outdated requirements and dependencies
+	python3 -m pip list --outdated
+
+.PHONY: pip
+pip: pip_update  ## Compile requirements
+	python3 -m piptools compile --no-header --quiet --upgrade --output-file requirements/common.txt requirements/common.in
+	python3 -m piptools compile --no-header --quiet --upgrade --output-file requirements/local.txt requirements/local.in
+	python3 -m piptools compile --no-header --quiet --upgrade --output-file requirements/test.txt requirements/test.in
+
+.PHONY: pip_update
+pip_update:  ## Update requirements and dependencies
+	python3 -m pip install -q -U pip~=21.3.0 pip-tools~=6.4.0 setuptools~=60.5.0 wheel~=0.37.0
+
+.PHONY: precommit
+precommit:  ## Fix code formatting, linting and sorting imports
+	python3 -m pre_commit run --all-files
+
+.PHONY: precommit_update
+precommit_update:  ## Update pre_commit
+	python3 -m pre_commit autoupdate
+
+.PHONY: report
+report:  ## Run coverage report
+	python3 -m coverage combine
+	python3 -m coverage html
+	python3 -m coverage report
+
+.PHONY: simpletest
+simpletest:  ## Run debugging test
+	python3 manage.py test --timing --failfast --pdb --debug-sql --verbosity 2
+
+.PHONY: test
+test:  ## Run test
 	tox -e coverage,reporthtml,report
+
+.PHONY: update
+update: pip precommit_update ## Run update
+
+.PHONY: help
+help:
+	@echo "[Help] Makefile list commands:"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

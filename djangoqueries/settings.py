@@ -14,7 +14,7 @@ import os
 import string
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -67,9 +67,9 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-            ]
+            ],
         },
-    }
+    },
 ]
 
 WSGI_APPLICATION = "djangoqueries.wsgi.application"
@@ -128,6 +128,12 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+STATIC_ROOT = BASE_DIR / "static"
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/stable/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Django Debug Toolbar
 # https://django-debug-toolbar.readthedocs.io/en/stable/configuration.html
@@ -139,4 +145,5 @@ except ModuleNotFoundError:  # pragma: no cover
 else:  # pragma: no cover
     INTERNAL_IPS = ALLOWED_HOSTS
     INSTALLED_APPS.append("debug_toolbar")
-    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
+    MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
+    DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda x: True}

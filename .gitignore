@@ -22,7 +22,6 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -45,6 +44,7 @@ htmlcov/
 .nox/
 .coverage
 .coverage.*
+.coverages/
 .cache
 nosetests.xml
 coverage.xml
@@ -55,7 +55,7 @@ coverage.xml
 cover/
 
 # Translations
-*.mo
+# *.mo
 *.pot
 
 # Django stuff:
@@ -140,12 +140,43 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# static files generated from Django application using `collectstatic`
-media
-static
-
 # END https://github.com/github/gitignore/blob/master/Python.gitignore
 
+# START local
+
+# JetBrains
+.idea/
+
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.un~
+
 # VisualStudioCode
-.devcontainer/
+.devcontainer*
 .vscode/
+
+# Redis
+*.rdb
+
+# macOS
+.DS_Store
+
+# Django
+/static/
+media/
+
+# Others
+*.bak
+.bash_history
+.local
+.ipython
+*.local*
+/data/
+/manage_local.py
+/media_test
+report.xml
+
+# END local

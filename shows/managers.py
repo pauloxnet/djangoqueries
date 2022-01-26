@@ -15,7 +15,6 @@ class BandManager(models.Manager):
 
     def search(self, text):
         """Search for a band by text."""
-
         search_query = SearchQuery(text, config="english")
         search_vectors = (
             SearchVector("nickname", weight="A", config="english")

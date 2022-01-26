@@ -1,0 +1,102 @@
+asgiref==3.5.0
+    # via django
+attrs==21.4.0
+    # via flake8-bugbear
+black==21.12b0
+    # via -r requirements/test.in
+click==8.0.3
+    # via
+    #   black
+    #   pip-tools
+coverage[toml]==6.3
+    # via -r requirements/test.in
+distlib==0.3.4
+    # via virtualenv
+django==4.0.1
+    # via -r requirements/common.in
+filelock==3.4.2
+    # via
+    #   tox
+    #   virtualenv
+flake8==4.0.1
+    # via
+    #   -r requirements/test.in
+    #   flake8-bugbear
+    #   flake8-docstrings
+    #   flake8-isort
+flake8-bugbear==22.1.11
+    # via -r requirements/test.in
+flake8-docstrings==1.6.0
+    # via -r requirements/test.in
+flake8-isort==4.1.1
+    # via -r requirements/test.in
+isort==5.10.1
+    # via
+    #   -r requirements/test.in
+    #   flake8-isort
+mccabe==0.6.1
+    # via flake8
+mypy==0.931
+    # via -r requirements/test.in
+mypy-extensions==0.4.3
+    # via
+    #   black
+    #   mypy
+packaging==21.3
+    # via tox
+pathspec==0.9.0
+    # via black
+pep517==0.12.0
+    # via pip-tools
+pip-tools==6.4.0
+    # via -r requirements/test.in
+platformdirs==2.4.1
+    # via
+    #   black
+    #   virtualenv
+pluggy==1.0.0
+    # via tox
+psycopg2==2.9.3
+    # via -r requirements/common.in
+py==1.11.0
+    # via tox
+pycodestyle==2.8.0
+    # via flake8
+pydocstyle==6.1.1
+    # via flake8-docstrings
+pyflakes==2.4.0
+    # via flake8
+pyparsing==3.0.7
+    # via packaging
+six==1.16.0
+    # via
+    #   tox
+    #   virtualenv
+snowballstemmer==2.2.0
+    # via pydocstyle
+sqlparse==0.4.2
+    # via django
+testfixtures==6.18.3
+    # via flake8-isort
+toml==0.10.2
+    # via tox
+tomli==1.2.3
+    # via
+    #   black
+    #   coverage
+    #   mypy
+    #   pep517
+tox==3.24.5
+    # via -r requirements/test.in
+typing-extensions==4.0.1
+    # via
+    #   black
+    #   mypy
+virtualenv==20.13.0
+    # via tox
+wheel==0.37.1
+    # via pip-tools
+
+# The following packages are considered to be unsafe in a requirements file:
+# pip
+# setuptools
