@@ -3,41 +3,41 @@ asgiref==3.5.0
 attrs==21.4.0
     # via flake8-bugbear
 black==21.12b0
-    # via -r requirements/test.in
+    # via -r test.in
 click==8.0.3
     # via
     #   black
     #   pip-tools
 coverage[toml]==6.3
-    # via -r requirements/test.in
+    # via -r test.in
 distlib==0.3.4
     # via virtualenv
-django==4.0.1
-    # via -r requirements/common.in
+django==4.0.2
+    # via -r common.in
 filelock==3.4.2
     # via
     #   tox
     #   virtualenv
 flake8==4.0.1
     # via
-    #   -r requirements/test.in
+    #   -r test.in
     #   flake8-bugbear
     #   flake8-docstrings
     #   flake8-isort
 flake8-bugbear==22.1.11
-    # via -r requirements/test.in
+    # via -r test.in
 flake8-docstrings==1.6.0
-    # via -r requirements/test.in
+    # via -r test.in
 flake8-isort==4.1.1
-    # via -r requirements/test.in
+    # via -r test.in
 isort==5.10.1
     # via
-    #   -r requirements/test.in
+    #   -r test.in
     #   flake8-isort
 mccabe==0.6.1
     # via flake8
 mypy==0.931
-    # via -r requirements/test.in
+    # via -r test.in
 mypy-extensions==0.4.3
     # via
     #   black
@@ -49,7 +49,7 @@ pathspec==0.9.0
 pep517==0.12.0
     # via pip-tools
 pip-tools==6.4.0
-    # via -r requirements/test.in
+    # via -r test.in
 platformdirs==2.4.1
     # via
     #   black
@@ -57,7 +57,7 @@ platformdirs==2.4.1
 pluggy==1.0.0
     # via tox
 psycopg2==2.9.3
-    # via -r requirements/common.in
+    # via -r common.in
 py==1.11.0
     # via tox
 pycodestyle==2.8.0
@@ -87,7 +87,7 @@ tomli==1.2.3
     #   mypy
     #   pep517
 tox==3.24.5
-    # via -r requirements/test.in
+    # via -r test.in
 typing-extensions==4.0.1
     # via
     #   black
