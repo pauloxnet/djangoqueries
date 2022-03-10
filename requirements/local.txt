@@ -6,17 +6,15 @@ attrs==21.4.0
     # via flake8-bugbear
 backcall==0.2.0
     # via ipython
-black==21.12b0
-    # via
-    #   -r requirements/test.in
-    #   ipython
+black==22.1.0
+    # via -r requirements/test.in
 cfgv==3.3.1
     # via pre-commit
-click==8.0.3
+click==8.0.4
     # via
     #   black
     #   pip-tools
-coverage[toml]==6.3
+coverage[toml]==6.3.2
     # via -r requirements/test.in
 decorator==5.1.1
     # via
@@ -24,15 +22,15 @@ decorator==5.1.1
     #   ipython
 distlib==0.3.4
     # via virtualenv
-django==4.0.1
+django==4.0.3
     # via
     #   -r requirements/common.in
     #   django-debug-toolbar
 django-debug-toolbar==3.2.4
     # via -r requirements/local.in
-executing==0.8.2
+executing==0.8.3
     # via stack-data
-filelock==3.4.2
+filelock==3.6.0
     # via
     #   tox
     #   virtualenv
@@ -48,11 +46,11 @@ flake8-docstrings==1.6.0
     # via -r requirements/test.in
 flake8-isort==4.1.1
     # via -r requirements/test.in
-identify==2.4.5
+identify==2.4.11
     # via pre-commit
 ipdb==0.13.9
     # via -r requirements/local.in
-ipython==8.0.1
+ipython==8.1.1
     # via ipdb
 isort==5.10.1
     # via
@@ -84,9 +82,9 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pip-tools==6.4.0
+pip-tools==6.5.1
     # via -r requirements/test.in
-platformdirs==2.4.1
+platformdirs==2.5.1
     # via
     #   black
     #   virtualenv
@@ -94,7 +92,7 @@ pluggy==1.0.0
     # via tox
 pre-commit==2.17.0
     # via -r requirements/local.in
-prompt-toolkit==3.0.24
+prompt-toolkit==3.0.28
     # via ipython
 psycopg2==2.9.3
     # via -r requirements/common.in
@@ -116,7 +114,7 @@ pyparsing==3.0.7
     # via packaging
 pyyaml==6.0
     # via pre-commit
-rope==0.22.0
+rope==0.23.0
     # via -r requirements/local.in
 six==1.16.0
     # via
@@ -128,16 +126,16 @@ sqlparse==0.4.2
     # via
     #   django
     #   django-debug-toolbar
-stack-data==0.1.4
+stack-data==0.2.0
     # via ipython
-testfixtures==6.18.3
+testfixtures==6.18.5
     # via flake8-isort
 toml==0.10.2
     # via
     #   ipdb
     #   pre-commit
     #   tox
-tomli==1.2.3
+tomli==2.0.1
     # via
     #   black
     #   coverage
@@ -149,11 +147,9 @@ traitlets==5.1.1
     # via
     #   ipython
     #   matplotlib-inline
-typing-extensions==4.0.1
-    # via
-    #   black
-    #   mypy
-virtualenv==20.13.0
+typing-extensions==4.1.1
+    # via mypy
+virtualenv==20.13.3
     # via
     #   pre-commit
     #   tox

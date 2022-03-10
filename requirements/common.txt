@@ -1,6 +1,6 @@
 asgiref==3.5.0
     # via django
-django==4.0.1
+django==4.0.3
     # via -r requirements/common.in
 psycopg2==2.9.3
     # via -r requirements/common.in

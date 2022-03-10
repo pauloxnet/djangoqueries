@@ -2,19 +2,19 @@ asgiref==3.5.0
     # via django
 attrs==21.4.0
     # via flake8-bugbear
-black==21.12b0
+black==22.1.0
     # via -r requirements/test.in
-click==8.0.3
+click==8.0.4
     # via
     #   black
     #   pip-tools
-coverage[toml]==6.3
+coverage[toml]==6.3.2
     # via -r requirements/test.in
 distlib==0.3.4
     # via virtualenv
-django==4.0.1
+django==4.0.3
     # via -r requirements/common.in
-filelock==3.4.2
+filelock==3.6.0
     # via
     #   tox
     #   virtualenv
@@ -48,9 +48,9 @@ pathspec==0.9.0
     # via black
 pep517==0.12.0
     # via pip-tools
-pip-tools==6.4.0
+pip-tools==6.5.1
     # via -r requirements/test.in
-platformdirs==2.4.1
+platformdirs==2.5.1
     # via
     #   black
     #   virtualenv
@@ -76,11 +76,11 @@ snowballstemmer==2.2.0
     # via pydocstyle
 sqlparse==0.4.2
     # via django
-testfixtures==6.18.3
+testfixtures==6.18.5
     # via flake8-isort
 toml==0.10.2
     # via tox
-tomli==1.2.3
+tomli==2.0.1
     # via
     #   black
     #   coverage
@@ -88,11 +88,9 @@ tomli==1.2.3
     #   pep517
 tox==3.24.5
     # via -r requirements/test.in
-typing-extensions==4.0.1
-    # via
-    #   black
-    #   mypy
-virtualenv==20.13.0
+typing-extensions==4.1.1
+    # via mypy
+virtualenv==20.13.3
     # via tox
 wheel==0.37.1
     # via pip-tools
