@@ -11,11 +11,11 @@ check:  ## Check code formatting and import sorting
 
 .PHONY: collectstatic
 collectstatic:  ## Django collectstatic
-	python3 manage.py collectstatic --clear --link --noinput
+	python3 -m manage collectstatic --clear --link --noinput
 
 .PHONY: coverage
 coverage:  ## Run coverage
-	python3 -m coverage run manage.py test --noinput --parallel
+	python3 -m coverage run manage.py test --noinput --parallel --shuffle
 
 .PHONY: fix
 fix:  ## Fix code formatting, linting and sorting imports
@@ -26,7 +26,7 @@ fix:  ## Fix code formatting, linting and sorting imports
 
 .PHONY: flush
 flush:  ## Django flush
-	python3 manage.py flush --noinput
+	python3 -m manage flush --noinput
 
 .PHONY: local
 local: pip_update  ## Install local requirements and dependencies
@@ -34,11 +34,11 @@ local: pip_update  ## Install local requirements and dependencies
 
 .PHONY: migrate
 migrate:  ## Django migrate
-	python3 manage.py migrate --noinput
+	python3 -m manage migrate --noinput
 
 .PHONY: migrations
 migrations: ## Django makemigrations
-	python3 manage.py makemigrations --no-header
+	python3 -m manage makemigrations --no-header
 
 .PHONY: outdated
 outdated:  ## Check outdated requirements and dependencies
@@ -70,7 +70,7 @@ report:  ## Run coverage report
 
 .PHONY: simpletest
 simpletest:  ## Run debugging test
-	python3 manage.py test --timing --failfast --pdb --debug-sql --verbosity 2
+	python3 -m manage test --timing --shuffle --failfast --pdb --debug-sql --verbosity 3
 
 .PHONY: test
 test:  check coverage report ## Run test
