@@ -3,7 +3,7 @@
 [![Twitter: pauloxnet](https://img.shields.io/twitter/follow/pauloxnet.svg?style=social)](https://twitter.com/pauloxnet)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 
-> Source code used in my article ["Full-Text Search in Django with PostgreSQL"](https://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql) based on the blog application defined in the Django documentation topic ["Making queries"](https://docs.djangoproject.com/en/stable/topics/db/queries/).
+Source code used in my article ["Full-Text Search in Django with PostgreSQL"](https://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql) based on the blog application defined in the Django documentation topic ["Making queries"](https://docs.djangoproject.com/en/stable/topics/db/queries/).
 
 ## 📖 Documentation
 
@@ -37,7 +37,7 @@ $ python3 -m pip install -r requirements/local.txt
 Migrating the `djangoqueries` database to create all required tables:
 
 ```shell
-$ python manage.py migrate
+$ python3 -m manage migrate
 ```
 
 ### 🔬 Tests
@@ -45,7 +45,7 @@ $ python manage.py migrate
 Running the defined tests:
 
 ```shell
-$ python manage.py test
+$ python3 -m manage test
 ```
 
 ### 📊 Data
