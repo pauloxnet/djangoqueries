@@ -6,6 +6,8 @@ check:  ## Check code formatting and import sorting
 	python3 -m isort --check .
 	python3 -m flake8
 	python3 -m mypy .
+	python3 -m bandit --quiet --recursive --exclude tests .
+	python3 -m pip_audit --require-hashes --requirement requirements/common.txt
 
 .PHONY: collectstatic
 collectstatic:  ## Django collectstatic
@@ -44,13 +46,13 @@ outdated:  ## Check outdated requirements and dependencies
 
 .PHONY: pip
 pip: pip_update  ## Compile requirements
-	python3 -m piptools compile --no-header --quiet --upgrade --output-file requirements/common.txt requirements/common.in
-	python3 -m piptools compile --no-header --quiet --upgrade --output-file requirements/local.txt requirements/local.in
-	python3 -m piptools compile --no-header --quiet --upgrade --output-file requirements/test.txt requirements/test.in
+	python3 -m piptools compile --generate-hashes --no-header --quiet --upgrade --output-file requirements/common.txt requirements/common.in
+	python3 -m piptools compile --generate-hashes --no-header --quiet --upgrade --output-file requirements/local.txt requirements/local.in
+	python3 -m piptools compile --generate-hashes --no-header --quiet --upgrade --output-file requirements/test.txt requirements/test.in
 
 .PHONY: pip_update
 pip_update:  ## Update requirements and dependencies
-	python3 -m pip install -q -U pip~=22.0.0 pip-tools~=6.5.0 setuptools~=60.9.0 wheel~=0.37.0
+	python3 -m pip install -q -U pip~=22.1.0 pip-tools~=6.8.0 setuptools~=63.1.0 wheel~=0.37.0
 
 .PHONY: precommit
 precommit:  ## Fix code formatting, linting and sorting imports
@@ -71,8 +73,7 @@ simpletest:  ## Run debugging test
 	python3 manage.py test --timing --failfast --pdb --debug-sql --verbosity 2
 
 .PHONY: test
-test:  ## Run test
-	tox -e coverage,reporthtml,report
+test:  check coverage report ## Run test
 
 .PHONY: update
 update: pip precommit_update ## Run update
