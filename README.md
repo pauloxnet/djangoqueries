@@ -1,7 +1,8 @@
 # 🦄️ Django Queries
 
-[![Twitter: pauloxnet](https://img.shields.io/twitter/follow/pauloxnet.svg?style=social)](https://twitter.com/pauloxnet)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
+![Coverage](https://img.shields.io/badge/coverage-100%25-success)
+[![Mastodon Follow](https://img.shields.io/mastodon/follow/000129461?domain=https%3A%2F%2Ffosstodon.org)](https://fosstodon.org/@paulox)
 
 Source code used in my article ["Full-Text Search in Django with PostgreSQL"](https://www.paulox.net/2017/12/22/full-text-search-in-django-with-postgresql) based on the blog application defined in the Django documentation topic ["Making queries"](https://docs.djangoproject.com/en/stable/topics/db/queries/).
 
