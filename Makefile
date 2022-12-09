@@ -18,6 +18,10 @@ collectstatic:  ## Django collectstatic
 coverage:  ## Run coverage
 	python3 -m coverage run manage.py test --buffer --noinput --parallel --shuffle
 
+.PHONY: dumpblog
+dumpblog:  ## Django dump blog data
+	python3 -m manage dumpdata blog --natural-foreign --natural-primary --output blog/fixtures/blog.json
+
 .PHONY: fix
 fix:  ## Fix code formatting, linting and sorting imports
 	python3 -m black .
@@ -27,6 +31,10 @@ fix:  ## Fix code formatting, linting and sorting imports
 .PHONY: flush
 flush:  ## Django flush
 	python3 -m manage flush --noinput
+
+.PHONY: loadblog
+loadblog: ## Django load blog data
+	python3 -m manage loaddata blog/fixtures/blog.json
 
 .PHONY: local
 local: pip_update  ## Install local requirements and dependencies

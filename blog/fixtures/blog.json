@@ -1,0 +1,89 @@
+[
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "name": "Recettes",
+      "tagline": "Des recettes dans toutes les langues!",
+      "lang": "french"
+    }
+  },
+  {
+    "model": "blog.author",
+    "pk": 1,
+    "fields": { "name": "Terry Gilliam", "email": "" }
+  },
+  {
+    "model": "blog.author",
+    "pk": 2,
+    "fields": { "name": "Terry Jones", "email": "" }
+  },
+  {
+    "model": "blog.author",
+    "pk": 3,
+    "fields": { "name": "Jerry Lewis", "email": "" }
+  },
+  {
+    "model": "blog.author",
+    "pk": 4,
+    "fields": { "name": "Helen Mirren", "email": "" }
+  },
+  {
+    "model": "blog.author",
+    "pk": 5,
+    "fields": { "name": "Helena Bonham Carter", "email": "" }
+  },
+  {
+    "model": "blog.author",
+    "pk": 6,
+    "fields": { "name": "Hélène Joy", "email": "" }
+  },
+  {
+    "model": "blog.entry",
+    "pk": 1,
+    "fields": {
+      "blog": 1,
+      "headline": "Cheese on Toast recipes",
+      "body_text": "Cheese on toast or in Scotland \"Toasted cheese\" or \"Roasted Cheese\" is a snack made by placing cheese on slices of bread and melting the cheese under a grill.",
+      "pub_date": "2022-12-09",
+      "mod_date": "2022-12-09",
+      "n_comments": 0,
+      "n_pingbacks": 0,
+      "rating": 5,
+      "search_vector": null,
+      "authors": []
+    }
+  },
+  {
+    "model": "blog.entry",
+    "pk": 2,
+    "fields": {
+      "blog": 1,
+      "headline": "Pizza Recipes",
+      "body_text": "Pizza is a yeasted flatbread typically topped with tomato sauce and cheese and baked in an oven. It is commonly topped with a selection of meats, vegetables and condiments.",
+      "pub_date": "2022-12-09",
+      "mod_date": "2022-12-09",
+      "n_comments": 0,
+      "n_pingbacks": 0,
+      "rating": 5,
+      "search_vector": null,
+      "authors": []
+    }
+  },
+  {
+    "model": "blog.entry",
+    "pk": 3,
+    "fields": {
+      "blog": 1,
+      "headline": "Pain perdu",
+      "body_text": "Le pain perdu est un mets à base de pain trempé dans un mélange de lait et d'œuf puis cuit. Il est connu dans de nombreuses régions du monde sous diverses appellations comme pain doré.",
+      "pub_date": "2022-12-09",
+      "mod_date": "2022-12-09",
+      "n_comments": 0,
+      "n_pingbacks": 0,
+      "rating": 5,
+      "search_vector": null,
+      "authors": []
+    }
+  }
+]

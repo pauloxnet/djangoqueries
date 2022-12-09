@@ -53,7 +53,7 @@ $ python3 -m manage test
 Populating the `djangoqueries` database with demo data for the blog app:
 
 ```shell
-$ python3 -m manage populate
+$ python3 -m manage loaddata blog/fixtures/blog.json
 ```
 
 ## ⚖️ License
