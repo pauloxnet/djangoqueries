@@ -23,21 +23,41 @@ omit = [
 ]
 source = ["."]
 
-[tool.isort]
-atomic = true
-combine_as_imports = true
-default_section = "THIRDPARTY"
-known_first_party = [
+[tool.mypy]
+ignore_missing_imports = true
+python_version = "3.10"
+
+[tool.ruff]
+extend-exclude = [
+    "*/migrations/*",
+]
+extend-ignore = [
+    "D203",
+    "D212",
+    "D213",
+    "D214",
+    "D215",
+    "D404",
+    "D405",
+    "D406",
+    "D407",
+    "D408",
+    "D409",
+    "D410",
+    "D411",
+    "D413",
+    "D415",
+    "D416",
+    "D417",
+]
+select = ["A", "B", "C", "D", "E", "F", "I", "W", "B9"]
+
+[tool.ruff.isort]
+known-first-party = [
     "blog",
     "djangoqueries",
     "shows"
 ]
-known_third_party = "django"
-profile = "black"
-skip = [
-    ".vscode-server",
+known-third-party = [
+    "django",
 ]
-
-[tool.mypy]
-ignore_missing_imports = true
-python_version = "3.10"

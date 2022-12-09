@@ -1,8 +1,8 @@
 default_language_version:
-  python: python3
+  python: python3.10
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.3.0"
+    rev: "v4.4.0"
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -11,7 +11,6 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-toml
-      - id: check-xml
       - id: check-yaml
         args: ["--allow-multiple-documents"]
       - id: debug-statements
@@ -23,42 +22,35 @@ repos:
       - id: fix-byte-order-marker
       - id: fix-encoding-pragma
         args: ["--remove"]
-      - id: forbid-new-submodules
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/asottile/pyupgrade
-    rev: "v3.1.0"
+    rev: "v3.3.1"
     hooks:
       - id: pyupgrade
         args: [--py310-plus]
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: "1.10.0"
+    rev: "1.12.0"
     hooks:
       - id: django-upgrade
         args: [--target-version, "4.1"]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.170
+    hooks:
+      - id: ruff
+        args:
+          - --fix
   - repo: https://github.com/psf/black
     rev: "22.10.0"
     hooks:
       - id: black
-  - repo: https://github.com/pycqa/isort
-    rev: "5.10.1"
-    hooks:
-      - id: isort
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "v3.0.0-alpha.3"
+    rev: "v3.0.0-alpha.4"
     hooks:
       - id: prettier
         exclude_types: [html]
-  - repo: https://github.com/pycqa/flake8
-    rev: "5.0.4"
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-assertive~=2.1.0
-          - flake8-bugbear~=22.9.0
-          - flake8-docstrings~=1.6.0
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v0.982"
+    rev: "v0.991"
     hooks:
       - id: mypy
   - repo: https://github.com/pycqa/bandit
@@ -67,7 +59,7 @@ repos:
       - id: bandit
         args: ["--exclude", ".venv,tests"]
   - repo: https://github.com/trailofbits/pip-audit
-    rev: v2.4.4
+    rev: v2.4.8
     hooks:
       - id: pip-audit
         args: ["--require-hashes", "--requirement", "requirements/common.txt"]
