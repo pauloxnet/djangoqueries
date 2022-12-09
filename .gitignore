@@ -165,21 +165,17 @@ cython_debug/
 
 # START local
 
-# Vim
-[._]*.un~
+# Coverage
 
-# VisualStudioCode
-.devcontainer*
-.vscode/
-
-# Redis
-*.rdb
-
-# macOS
-.DS_Store
+.coverages
 
 # Django
-/static/
-media/
+static/
+
+# Ruff
+.ruff_cache
+
+# VS Codium
+.vscode/
 
 # END local
