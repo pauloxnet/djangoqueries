@@ -1,2 +1,2 @@
-django~=4.1.0
+django~=4.1.6
 psycopg2~=2.9.0
