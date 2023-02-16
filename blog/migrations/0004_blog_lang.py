@@ -2,7 +2,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("blog", "0003_entry_search_vector")]
 
     operations = [

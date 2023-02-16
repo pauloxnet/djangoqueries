@@ -67,4 +67,5 @@ $ python3 -m manage loaddata blog/fixtures/blog.json
 
 -   🌍 Blog: [www.paulox.net](https://www.paulox.net)
 -   🐙 Github: [@pauloxnet](https://github.com/pauloxnet)
+-   🦣 Mastodon: [@paulox@fosstodon.org](https://fosstodon.org/@paulox)
 -   🐦️ Twitter: [@pauloxnet](https://twitter.com/pauloxnet)

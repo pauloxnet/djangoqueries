@@ -1,8 +1,7 @@
-# pip-compile --output-file test.txt test.in
 -r common.in
 bandit~=1.7.0
-black~=22.10.0
-coverage[toml]~=6.5.0
-mypy~=0.991
+black~=23.1.0
+coverage[toml]~=7.1.0
+mypy~=1.0.0
 pip-audit~=2.4.0
 ruff~=0.0.0
