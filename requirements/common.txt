@@ -5,14 +5,14 @@ asgiref==3.6.0 \
 django==4.2 \
     --hash=sha256:ad33ed68db9398f5dfb33282704925bce044bef4261cd4fb59e4e7f9ae505a78 \
     --hash=sha256:c36e2ab12824e2ac36afa8b2515a70c53c7742f0d6eaefa7311ec379558db997
-    # via -r requirements/common.in
+    # via -r common.in
 psycopg==3.1.8 \
     --hash=sha256:59b4a71536b146925513c0234dfd1dc42b81e65d56ce5335dff4813434dbc113 \
     --hash=sha256:b1500c42063abaa01d30b056f0b300826b8dd8d586900586029a294ce74af327
-    # via -r requirements/common.in
-sqlparse==0.4.3 \
-    --hash=sha256:0323c0ec29cd52bceabc1b4d9d579e311f3e4961b98d174201d5622a23b85e34 \
-    --hash=sha256:69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268
+    # via -r common.in
+sqlparse==0.4.4 \
+    --hash=sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3 \
+    --hash=sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c
     # via django
 typing-extensions==4.5.0 \
     --hash=sha256:5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb \
