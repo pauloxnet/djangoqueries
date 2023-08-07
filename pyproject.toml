@@ -1,35 +1,6 @@
 [tool.black]
 target-version = ["py311"]
 
-[tool.coverage.html]
-title = "Django Queries - Coverage"
-
-[tool.coverage.report]
-fail_under = 100
-show_missing = true
-
-[tool.coverage.run]
-branch = true
-concurrency = ["multiprocessing"]
-data_file = ".coverages/.coverage"
-disable_warnings = ["no-data-collected"]
-omit = [
-    ".venv/*",
-    "djangoqueries/asgi.py",
-    "djangoqueries/workers.py",
-    "djangoqueries/wsgi.py",
-    "manage*.py",
-    "venv/*",
-]
-source = ["."]
-
-[tool.mypy]
-ignore_missing_imports = true
-python_version = "3.11"
-
-[tool.bandit]
-exclude_dirs = [".venv", "tests"]
-
 [tool.ruff]
 extend-exclude = [
     "__pycache__",
@@ -67,3 +38,32 @@ known-first-party = [
 known-third-party = [
     "django",
 ]
+
+[tool.coverage.html]
+title = "Django Queries - Coverage"
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+
+[tool.coverage.run]
+branch = true
+concurrency = ["multiprocessing"]
+data_file = ".coverages/.coverage"
+disable_warnings = ["no-data-collected"]
+omit = [
+    ".venv/*",
+    "djangoqueries/asgi.py",
+    "djangoqueries/workers.py",
+    "djangoqueries/wsgi.py",
+    "manage*.py",
+    "venv/*",
+]
+source = ["."]
+
+[tool.mypy]
+ignore_missing_imports = true
+python_version = "3.11"
+
+[tool.bandit]
+exclude_dirs = [".venv", "tests"]
