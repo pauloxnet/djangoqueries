@@ -5,10 +5,10 @@ check:  ## Check code formatting and import sorting
 	python3 -m manage check
 	python3 -m manage makemigrations --dry-run --check
 	python3 -m black --check .
-	python3 -m ruff .
-	python3 -m mypy .
-	python3 -m bandit --quiet --recursive --exclude tests .
-	python3 -m pip_audit --require-hashes --requirement requirements/common.txt
+	python3 -m ruff check .
+	python3 -m mypy --no-site-packages .
+	python3 -m bandit --configfile pyproject.toml --quiet --recursive --exclude tests .
+	python3 -m pip_audit --require-hashes --disable-pip --requirement requirements/common.txt
 
 .PHONY: collectstatic
 collectstatic:  ## Django collectstatic
@@ -26,7 +26,7 @@ dumpblog:  ## Django dump blog data
 fix:  ## Fix code formatting, linting and sorting imports
 	python3 -m black .
 	python3 -m ruff --fix .
-	python3 -m mypy .
+	python3 -m mypy --no-site-packages .
 
 .PHONY: flush
 flush:  ## Django flush
@@ -54,13 +54,13 @@ outdated:  ## Check outdated requirements and dependencies
 
 .PHONY: pip
 pip: pip_update  ## Compile requirements
-	python3 -m piptools compile --generate-hashes --no-header --quiet --resolver=backtracking --upgrade --output-file requirements/common.txt requirements/common.in
-	python3 -m piptools compile --generate-hashes --no-header --quiet --resolver=backtracking --upgrade --output-file requirements/local.txt requirements/local.in
-	python3 -m piptools compile --generate-hashes --no-header --quiet --resolver=backtracking --upgrade --output-file requirements/test.txt requirements/test.in
+	python3 -m piptools compile --generate-hashes --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/common.txt requirements/common.in
+	python3 -m piptools compile --generate-hashes --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/local.txt requirements/local.in
+	python3 -m piptools compile --generate-hashes --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/test.txt requirements/test.in
 
 .PHONY: pip_update
 pip_update:  ## Update requirements and dependencies
-	python3 -m pip install -q -U pip~=23.2.0 pip-tools~=7.2.0 setuptools~=68.0.0 wheel~=0.41.0
+	python3 -m pip install -q -U pip~=23.2.0 pip-tools~=7.3.0 setuptools~=68.2.0 wheel~=0.41.0
 
 .PHONY: precommit
 precommit:  ## Fix code formatting, linting and sorting imports
