@@ -1,6 +1,6 @@
 # 🦄️ Django Queries
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
+[![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-success)
 [![Mastodon Follow](https://img.shields.io/mastodon/follow/000129461?domain=https%3A%2F%2Ffosstodon.org)](https://fosstodon.org/@paulox)
 
@@ -27,10 +27,10 @@ $ source .venv/bin/activate
 
 ### 🧩 Requirements
 
-Installing the required python packages in the `djangoqueries` virtual environments:
+Installing the latest version of `django` _(tested from version 1.11 to 5.1)_ and `psycopg` (tested from version 2.7 to 3.2) using the requirements file:
 
 ```shell
-$ python3 -m pip install -r requirements/local.txt
+$ python -m pip install -r requirements/local.txt
 ```
 
 ### ⬆️ Migrate
@@ -38,7 +38,7 @@ $ python3 -m pip install -r requirements/local.txt
 Migrating the `djangoqueries` database to create all required tables:
 
 ```shell
-$ python3 -m manage migrate
+$ python -m manage migrate
 ```
 
 ### 🔬 Tests
@@ -46,7 +46,7 @@ $ python3 -m manage migrate
 Running the defined tests:
 
 ```shell
-$ python3 -m manage test
+$ python -m manage test
 ```
 
 ### 📊 Data
@@ -54,7 +54,7 @@ $ python3 -m manage test
 Populating the `djangoqueries` database with demo data for the blog app:
 
 ```shell
-$ python3 -m manage loaddata blog/fixtures/blog.json
+$ python -m manage loaddata blog/fixtures/blog.json
 ```
 
 ## ⚖️ License
