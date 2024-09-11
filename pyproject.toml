@@ -1,42 +1,41 @@
-[tool.black]
-target-version = ["py311"]
-
 [tool.ruff]
-extend-exclude = [
-    "__pycache__",
-    ".vscode*",
-    "*/migrations/*",
-]
-extend-ignore = [
-    "D203",
-    "D212",
-    "D213",
-    "D214",
-    "D215",
-    "D404",
-    "D405",
-    "D406",
-    "D407",
-    "D408",
-    "D409",
-    "D410",
-    "D411",
-    "D413",
-    "D415",
-    "D416",
-    "D417",
-]
-select = ["A", "B", "C", "D", "E", "F", "I", "W", "B9"]
-target-version = "py311"
+target-version = "py312"
 
-[tool.ruff.isort]
-known-first-party = [
-    "blog",
-    "djangoqueries",
-    "shows"
+format.docstring-code-format = true
+lint.select = [
+  "A",   # flake8-builtins
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "C90", # McCabe cyclomatic complexity
+  "D",   # pydocstyle
+  "DJ",  # flake8-django
+  "E",   # pycodestyle errors
+  "F",   # Pyflakes
+  "I",   # isort
+  "Q",   # flake8-quotes
+  "UP",  # pyupgrade
+  "W",   # pycodestyle warnings
 ]
-known-third-party = [
-    "django",
+lint.ignore = [
+  "D203",
+  "D212",
+]
+lint.per-file-ignores."*/migrations/*.py" = [
+  "D100",
+  "D101",
+  "D102",
+  "D104",
+]
+lint.per-file-ignores."djangoqueries/*sgi.py" = [
+  "E402",
+]
+lint.isort.known-first-party = [
+  "blog",
+  "djangoqueries",
+  "shows",
+]
+lint.isort.known-third-party = [
+  "django",
 ]
 
 [tool.coverage.html]
@@ -48,22 +47,18 @@ show_missing = true
 
 [tool.coverage.run]
 branch = true
-concurrency = ["multiprocessing"]
+concurrency = [ "multiprocessing" ]
 data_file = ".coverages/.coverage"
-disable_warnings = ["no-data-collected"]
+disable_warnings = [ "no-data-collected" ]
 omit = [
-    ".venv/*",
-    "djangoqueries/asgi.py",
-    "djangoqueries/workers.py",
-    "djangoqueries/wsgi.py",
-    "manage*.py",
-    "venv/*",
+  ".venv/*",
+  "djangoqueries/asgi.py",
+  "djangoqueries/workers.py",
+  "djangoqueries/wsgi.py",
+  "manage*.py",
+  "venv/*",
 ]
-source = ["."]
-
-[tool.mypy]
-ignore_missing_imports = true
-python_version = "3.11"
+source = [ "." ]
 
 [tool.bandit]
-exclude_dirs = [".venv", "tests"]
+exclude_dirs = [ ".venv", "tests" ]
