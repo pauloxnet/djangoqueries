@@ -10,6 +10,10 @@ class Genre(models.Model):
 
     name = models.CharField(max_length=255)
 
+    def __str__(self):
+        """Return the string representation."""
+        return self.name
+
 
 class Band(models.Model):
     """A band with its genres."""
@@ -19,3 +23,7 @@ class Band(models.Model):
     genres = models.ManyToManyField("Genre")
 
     objects = BandManager()
+
+    def __str__(self):
+        """Return the string representation."""
+        return self.nickname
