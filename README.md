@@ -30,7 +30,7 @@ $ source .venv/bin/activate
 Installing the latest version of `django` _(tested from version 1.11 to 5.1)_ and `psycopg` (tested from version 2.7 to 3.2) using the requirements file:
 
 ```shell
-$ python -m pip install -r requirements/local.txt
+$ python -m pip install -r requirements.txt
 ```
 
 ### ⬆️ Migrate
