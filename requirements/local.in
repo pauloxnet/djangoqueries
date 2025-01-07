@@ -1,5 +1,4 @@
 -r test.in
 django-debug-toolbar~=4.4.0
-ipython~=8.27.0
-pip-tools~=7.4.0
-pre-commit~=3.8.0
+ipython~=8.31.0
+pre-commit~=4.0.0

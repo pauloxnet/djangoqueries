@@ -1,5 +1,5 @@
 """
-WSGI config for Django Queries project.
+WSGI config for djangoqueries project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

@@ -11,9 +11,9 @@ class Blog(models.Model):
     tagline = models.TextField()
     lang = models.CharField(max_length=100, default="english")
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return string representation."""
-        return self.name
+        return str(self.name)
 
 
 class Author(models.Model):
@@ -22,9 +22,9 @@ class Author(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return string representation."""
-        return self.name
+        return str(self.name)
 
 
 class Entry(models.Model):
@@ -41,6 +41,6 @@ class Entry(models.Model):
     rating = models.IntegerField(default=5)
     search_vector = search.SearchVectorField(null=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return the string representation."""
-        return self.headline
+        return str(self.headline)

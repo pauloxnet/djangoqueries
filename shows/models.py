@@ -10,9 +10,9 @@ class Genre(models.Model):
 
     name = models.CharField(max_length=255)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return the string representation."""
-        return self.name
+        return str(self.name)
 
 
 class Band(models.Model):
@@ -24,6 +24,6 @@ class Band(models.Model):
 
     objects = BandManager()
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return the string representation."""
-        return self.nickname
+        return str(self.nickname)

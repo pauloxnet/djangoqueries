@@ -13,14 +13,16 @@ from django.db import models
 class BandManager(models.Manager):
     """A band query manager."""
 
-    def search(self, text):
+    def search(self, text: str) -> models.query.QuerySet:
         """Search for a band by text."""
         search_query = SearchQuery(text, config="english")
         search_vectors = (
             SearchVector("nickname", weight="A", config="english")
             + SearchVector("description", weight="D", config="english")
             + SearchVector(
-                StringAgg("genres__name", delimiter=" "), weight="B", config="english"
+                StringAgg("genres__name", delimiter=" "),
+                weight="B",
+                config="english",
             )
         )
         search_rank = SearchRank(search_vectors, search_query)

@@ -5,8 +5,8 @@ check:
 	python -m manage makemigrations --dry-run --check
 	python -m ruff format --check .
 	python -m ruff check .
-	python -m bandit --configfile pyproject.toml --quiet --recursive --exclude tests .
-	python -m pip_audit --require-hashes --disable-pip --requirement requirements/common.txt
+	python -m bandit --configfile pyproject.toml --quiet --recursive .
+	python -m pip_audit --disable-pip --require-hashes --requirement requirements/common.txt
 
 coverage:
 	python -m coverage run manage.py test --buffer --noinput --parallel --shuffle
@@ -34,18 +34,18 @@ migrations:
 	python -m manage makemigrations --no-header
 
 pip_compile: pip_update
-	python -m piptools compile --generate-hashes --no-annotate --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/common.txt requirements/common.in
-	python -m piptools compile --generate-hashes --no-annotate --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/local.txt requirements/local.in
-	python -m piptools compile --generate-hashes --no-annotate --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/test.txt requirements/test.in
+	python -m uv pip compile --allow-unsafe --generate-hashes --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/common.txt requirements/common.in
+	python -m uv pip compile --allow-unsafe --generate-hashes --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/local.txt requirements/local.in
+	python -m uv pip compile --allow-unsafe --generate-hashes --no-header --quiet --resolver=backtracking --strip-extras --upgrade --output-file requirements/test.txt requirements/test.in
 
 pip_outdated:
-	python -m pip list --outdated
+	python -m uv pip list --outdated
 
 pip_sync: pip_update
-	python -m piptools sync requirements/local.txt
+	python -m uv pip sync requirements/local.txt
 
 pip_update:
-	python -m pip install --quiet --upgrade pip pip-tools
+	python -m pip install --quiet --upgrade pip uv
 
 precommit_install:
 	python -m pre_commit install
@@ -60,8 +60,8 @@ runserver:
 	python3 -m manage runserver 0:8000
 
 simpletest:
-	python -m manage test --debug-sql --duration 10  --failfast --pdb --shuffle --timing --verbosity 2
+	python -m manage test --debug-sql --duration 10 --failfast --pdb --shuffle --timing --verbosity 2
 
-test:  check coverage
+test: check coverage
 
 update: pip_compile precommit_update

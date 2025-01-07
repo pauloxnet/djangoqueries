@@ -86,7 +86,7 @@ DATABASES = {
         "PASSWORD": os.environ.get("PGPASSWORD", "postgres"),
         "PORT": os.environ.get("PGPORT", "5432"),
         "USER": os.environ.get("PGUSER", "postgres"),
-    }
+    },
 }
 
 
@@ -145,4 +145,3 @@ else:  # pragma: no cover
     INTERNAL_IPS = ALLOWED_HOSTS
     INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-    DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda x: True}

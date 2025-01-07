@@ -10,5 +10,5 @@ class Migration(migrations.Migration):
             model_name="entry",
             name="search_vector",
             field=django.contrib.postgres.search.SearchVectorField(null=True),
-        )
+        ),
     ]

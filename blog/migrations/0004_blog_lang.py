@@ -9,5 +9,5 @@ class Migration(migrations.Migration):
             model_name="blog",
             name="lang",
             field=models.CharField(default="english", max_length=100),
-        )
+        ),
     ]

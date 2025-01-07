@@ -65,7 +65,7 @@ $ python -m manage loaddata blog/fixtures/blog.json
 
 ### 👤 Paolo Melchiorre
 
--   🌍 Blog: [www.paulox.net](https://www.paulox.net)
--   🐙 Github: [@pauloxnet](https://github.com/pauloxnet)
--   🦣 Mastodon: [@paulox@fosstodon.org](https://fosstodon.org/@paulox)
--   🐦️ Twitter: [@pauloxnet](https://twitter.com/pauloxnet)
+- 🌍 Blog: [www.paulox.net](https://www.paulox.net)
+- 🐙 Github: [github.com/pauloxnet](https://github.com/pauloxnet)
+- 🦣 Mastodon: [fosstodon.org/@paulox](https://fosstodon.org/@paulox)
+- 👔 LinkedIn: [linkedin.com/in/paolomelchiorre/](https://www.linkedin.com/in/paolomelchiorre/)

@@ -1,5 +1,5 @@
 """
-ASGI config for Django Queries project.
+ASGI config for djangoqueries project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
