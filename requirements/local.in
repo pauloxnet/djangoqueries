@@ -1,4 +1,4 @@
 -r test.in
-django-debug-toolbar~=4.4.0
+django-debug-toolbar~=5.0.0
 ipython~=8.31.0
-pre-commit~=4.0.0
+pre-commit~=4.1.0
